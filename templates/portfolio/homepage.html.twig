@@ -1,0 +1,131 @@
+{% extends "base.html.twig" %}
+
+{% block title %}
+	Nassim HATTAB | Portfolio
+{% endblock %}
+
+{% block body %}
+
+	<div class="hero">
+		<div class="hero__body">
+			<div class="hero__hello fade in" style="transition-delay: 0.1s;">
+				Bonjour, je suis</div>
+			<div class="hero__name fade in" style="transition-delay: 0.3s;">
+				Nassim Hattab</div>
+			<div class="hero__job fade in" style="transition-delay: 0.4s;">
+				Développeur Web PHP Symfony</div>
+		</div>
+		<div class="hero__img fade in" style="transition-delay: 0.4s;">
+			<img src="/img/profile.png" alt="">
+		</div>
+	</div>
+	<section class="section skills__section">
+		<div class="top__title fade in" style="transition-delay: 0.1s;">Mes compétences</div>
+		<div class="sub__title">Services</div>
+		<div class="skills__items">
+			<div class="skills__stack">
+				<img src="/img/symfony.svg" alt="symfony-logo">
+				<div class="skills__techno">Backend Symfony</div>
+				Je développe des applications PHP maintenables et testables en respectant les bonnes pratiques avec le Framework Symfony 5.
+			</div>
+
+			<div class="skills__stack">
+				<img src="/img/js-react.svg" alt="js-react-logo">
+				<div class="skills__techno">
+					Frontend ReactJS</div>
+				Je fais également du frontend pour des applications dynamique et réactive avec le framework ReactJS.
+			</div>
+
+			<div class="skills__stack">
+				<img src="/img/env.svg" alt="js-react-logo">
+				<div class="skills__techno">Environnement de dév
+				</div>
+				Je développe principalement sous Linux (WSL2), et j'utilise Docker pour dockeriser mon environnement de développement.
+			</div>
+		</div>
+	</section>
+	<section class="section projects__section">
+		<div class="top__title fade in" style="transition-delay: 0.1s;">Mes réalisations</div>
+		<div class="sub__title">Projets</div>
+		<div class="flickity">
+			<div class="project">
+				<div class="project__img"> 
+					<img src="/img/uptoboxy.jpg" alt="">
+				</div>
+				<div class="project__description">
+				<div class="top__title">Projet 1</div>
+					orem ipsum dolor sit amet consectetur adipisicing elit. Suscipit qui quasi ab non voluptate voluptates a, vero id tempora ratione, rem rerum incidunt placeat adipisci amet assumenda deleniti libero illum.
+				</div>
+				<div class="porject__link"> 
+					<a  href="">En savoir plus</a>
+				</div>
+			</div>
+
+			<div class="project">
+			<div class="project__img"> 
+				<img src="https://picsum.photos/400/300?image=0" alt="projet">
+			</div>
+				<div class="project__description">
+				<div class="top__title">Projet 2</div>
+					orem ipsum dolor sit amet consectetur adipisicing elit. Suscipit qui quasi ab non voluptate voluptates a, vero id tempora ratione, rem rerum incidunt placeat adipisci amet assumenda deleniti libero illum.
+				</div>
+				<div class="porject__link"> 
+					<a  href="">En savoir plus</a>
+				</div>
+			</div>
+
+			<div class="project">
+				<div class="project__img">
+				 <img src="https://picsum.photos/400/300?image=520" alt="">
+				 </div>
+				  <div class="project__description"> 
+				 	<div class="top__title">Projet 3</div>
+					orem ipsum dolor sit amet consectetur adipisicing elit. Suscipit qui quasi ab non voluptate voluptates a, vero id tempora ratione, rem rerum incidunt placeat adipisci amet assumenda deleniti libero illum.
+				</div>
+				<div class="porject__link"> 
+					<a  href="">En savoir plus</a>
+				</div>
+			</div>
+
+			<div class="project">
+				<div class="project__img">
+					<img src="https://picsum.photos/400/300?image=500" alt="">
+				</div>
+			
+				  <div class="project__description"> 
+				 	<div class="top__title">Projet 4</div>
+					orem ipsum dolor sit amet consectetur adipisicing elit. Suscipit qui quasi ab non voluptate voluptates a, vero id tempora ratione, rem rerum incidunt placeat adipisci amet assumenda deleniti libero illum.
+				</div>
+				<div class="porject__link"> 
+					<a  href="">En savoir plus</a>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<section class="section contact__section">
+		<div class="top__title fade in" style="transition-delay: 0.1s;">Réseaux sociaux</div>
+		<div class="sub__title">Me retrouver</div>
+		<div class="social__media">
+			<div class="media">
+				<div class="media__name">LinkedIn 
+					<img src="/img/linkedin.svg" alt="linkedin-icon">
+				</div>
+				<div class="media__link">linkedin.com/in/nassim-hattab-413900142</div>
+			</div>
+			<div class="media">
+				<div class="media__name">GitHub 
+					<img src="/img/github.svg" alt="github-icon">
+				</div>
+					<div class="media__link">github.com/Sousx-Lab</div>
+				</div>
+			<div class="media">
+				<div class="media__name">Twitter
+					<img src="img/twitter.svg" alt="twitter-icon">
+				</div>
+				<div class="media__link">twitter.com/_NassimHattab</div>
+			</div>
+		</div>
+	</section>
+
+{% endblock %}

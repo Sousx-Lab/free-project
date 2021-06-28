@@ -1,0 +1,131 @@
+.projects__section {
+    padding-top: 100px;
+    padding-bottom: 100px;
+    overflow-y: hidden;
+
+    &::-webkit-scrollbar {
+        display: none;
+    }
+}
+
+.flickity {
+    
+    .project {
+        display: flex;
+        width: 411px;
+        flex-direction: column;
+        color: rgba($color: $white, $alpha: 0.85);
+        font-weight: 400;
+        background-color: $lightBg;
+        border-bottom: 2px solid rgba($color: $gold, $alpha: .5);
+        border-radius: 8px 8px 0 0;
+        overflow: hidden;
+        cursor: grab;
+
+        @include sm {
+            margin-bottom: 0px;
+
+            &:nth-child(1n+2) {
+                @include sm {
+                    margin-left: 20px;
+                }
+            }
+        }
+
+        .project__img {
+            border-radius: 8px;
+            overflow: hidden;
+
+            img {
+                width: 100%;
+                height: auto;
+                border-radius: 8px;
+                -webkit-transform: scale(1);
+                transform: scale(1);
+                -webkit-transition: .5s ease-in-out;
+                transition: .5s ease-in-out;
+            }
+
+        }
+
+        &:hover {
+            border-bottom: 4px solid rgba($color: $gold, $alpha: 0.7);
+
+            img {
+                -webkit-transform: scale(1.1);
+                transform: scale(1.1);
+            }
+        }
+
+        .top__title {
+            padding-top: 30px;
+            padding-bottom: 30px;
+        }
+
+        .project__description {
+            min-height: 300px;
+            padding: 30px;
+        }
+
+        @include md {}
+    }
+
+    .flickity-viewport {
+        margin-bottom: 20px;
+    }
+}
+
+.flickity-enabled:focus {
+    outline: none
+}
+
+.porject__link {
+    display: flex;
+    padding: 30px;
+
+    a {
+        padding: 20px 30px;
+        transition: 0.3s ease-in-out;
+        border: 1.5px;
+        border-style: solid;
+        border-color: $gold;
+        border-radius: 2px;
+        font-size: 12px;
+        font-weight: 600;
+        text-transform: uppercase;
+        text-decoration: none;
+        color: $white;
+        font-family: 'Open Sans';
+        font-weight: 600;
+        padding: 13px 15px;
+
+        &:hover {
+            color: $black;
+            background-color: $gold;
+        }
+
+        &:hover::after {
+            content: "  \279C";
+            color: $black;
+        }
+
+    }
+}
+
+.flickity-button {
+    background-color: rgba($color: $gold, $alpha: 0.85);
+    border: none;
+    width: 20px;
+    height: 4px;
+    margin: 2px;
+    cursor: pointer;
+
+    &:disabled {
+        background-color: rgba($color: $gold, $alpha: 0.5);
+        cursor: default;
+    }
+
+    .flickity-button-icon {
+        display: none;
+    }
+}

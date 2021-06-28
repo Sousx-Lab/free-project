@@ -1,0 +1,26 @@
+{
+  "name": "free-nssmhttb",
+  "version": "1.0.0",
+  "license": "MIT",
+  "app": "assets/js/app.js",
+  "targets": {
+    "app": {
+      "engines": {
+        "browsers": "Chrome 70"
+      },
+      "distDir": "public/build/"
+    }
+  },
+  "scripts": {
+    "start": "parcel serve ./assets/js/app.js",
+    "build": "parcel build ./assets/js/app.js --public-url public/build/",
+    "watch": "parcel watch ./assets/js/app.js --dist-dir public/build/"
+  },
+  "devDependencies": {
+    "@parcel/transformer-sass": "2.0.0-beta.3.1",
+    "parcel": "^2.0.0-beta.3.1"
+  },
+  "dependencies": {
+    "flickity": "^2.2.2"
+  }
+}

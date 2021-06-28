@@ -1,0 +1,85 @@
+.skills__section {
+    background-color: $lightBg;
+    padding-top: 100px;
+    padding-bottom: 100px;
+    
+}
+
+.top__title {
+    font-size: 14px;
+    font-weight: 600;
+    color: rgba($color: $gold, $alpha: 0.9);
+    text-align: center;
+    text-transform: uppercase;
+
+    @include md {
+        text-align: start;
+    }
+}
+
+.sub__title {
+    color: $white;
+    font-weight: 500;
+    font-size: 38px;
+    font-weight: 600;
+    font-family: 'Playfair Display';
+    margin-bottom: 40px;
+    text-align: center;
+
+    @include md {
+        text-align: start;
+    }
+}
+
+.skills__items {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    @include md {
+        flex-direction: row;
+        align-items: stretch;
+    }
+
+    .skills__stack {
+        max-width: 500px;
+        flex: 1 1 0px;
+        padding: 32px;
+        border: 0.5px solid rgba($color: $gold, $alpha: 0.6);
+        border-radius: 1px;
+        margin-bottom: 30px;
+        color: rgba($color: $white, $alpha: 0.85);
+        font-weight: 400;
+        
+        &:hover,&:focus {
+            border-color: rgba($color: $gold, $alpha: 1.5);
+
+            .skills__techno {
+                color: $gold;
+            }
+        }
+
+        @include md {
+            margin-bottom: 0px;
+            &:nth-child(1n+2) {
+                @include sm {
+                    margin-left: 20px;
+                }
+            }
+        }
+
+        img {
+            width: 130px;
+            height: auto;
+            margin-bottom: 20px;
+
+        }
+
+        .skills__techno {
+            color: $white;
+            font-weight: 600;
+            font-size: 20px;
+            font-family: 'Playfair Display';
+            margin-bottom: 20px;
+        }
+    }
+}

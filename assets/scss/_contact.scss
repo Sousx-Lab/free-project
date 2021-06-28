@@ -1,0 +1,68 @@
+.contact__section {
+    background-color: $lightBg;
+    padding-top: 100px;
+    padding-bottom: 100px;
+}
+
+.social__media {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+
+    @include md {
+        flex-direction: row;
+
+    }
+
+    .media {
+        width: 90%;
+        flex: 1 1 0;
+        margin-left: auto;
+        margin-right: auto;
+        padding: 32px;
+        border: 0.5px solid rgba($color: $gold, $alpha: 0.6);
+        border-radius: 2px;
+        margin-bottom: 30px;
+        color: rgba($color: $white, $alpha: 0.85);
+        font-weight: 400;
+
+        @include md {
+            width: auto;
+
+            &:nth-child(1n+2) {
+                @include sm {
+                    margin-left: 20px;
+                }
+            }
+        }
+
+        &:hover,
+        &:focus {
+            background-color: rgba($color: $gold, $alpha: 1.0);
+            color: $black;
+
+            img {
+                filter: unset !important;
+            }
+
+        }
+
+        .media__name {
+            font-size: 16px;
+            font-weight: 600;
+            padding-bottom: 20px;
+
+            img {
+                width: 38px;
+                float: right;
+                filter: invert(82%) sepia(22%) saturate(1015%) hue-rotate(335deg) brightness(90%) contrast(102%);
+            }
+
+        }
+
+        .media__link {
+            font-size: 12px;
+        }
+    }
+
+}

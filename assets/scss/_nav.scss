@@ -1,0 +1,92 @@
+.header {
+    display: flex;
+    position: absolute;
+    align-items: center;
+    margin: 20px auto 20px auto;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 5;
+}
+
+.header__logo img {
+    @include sm {
+        height: 50px;
+        width: auto;
+        display: block;
+    }
+
+    height: 25px;
+
+
+}
+
+.header ul {
+    display: flex;
+    margin-left: auto;
+    align-items: center;
+
+    li {
+        list-style: none;
+    }
+
+    #contact {
+        @include md {
+            margin-left: 20px;
+        }
+
+        margin-left: 10px;
+
+        a {
+            transition: 0.4s;
+            border: 1.5px;
+            border-style: solid;
+            border-color: $gold;
+            border-radius: 2px;
+        }
+    }
+
+    #contact:hover {
+        a {
+            color: $black;
+            background-color: $gold;
+        }
+    }
+
+    #real {
+        display: inline-block;
+        position: relative;
+
+        ::after {
+            content: '';
+            position: absolute;
+            display: block;
+            width: 0;
+            height: 1px;
+            margin-top: 13px;
+            background: $gold;
+            transition: width .3s;
+        }
+
+        :hover::after {
+            width: 100%;
+        }
+    }
+
+    a {
+        font-size: 12px;
+        text-decoration: none;
+        text-transform: uppercase;
+        color: $white;
+        font-family: 'Open Sans';
+        font-weight: 600;
+        padding: 8px 13px;
+
+        @include sm {
+            font-size: 14px;
+            font-weight: 600;
+            padding: 13px 30px;
+        }
+
+    }
+}
