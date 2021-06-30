@@ -9,7 +9,7 @@
 }
 
 .flickity {
-    
+
     .project {
         display: flex;
         width: 411px;
@@ -22,14 +22,9 @@
         overflow: hidden;
         cursor: grab;
 
-        @include sm {
-            margin-bottom: 0px;
+        &:nth-child(1n+2) {
+            margin-left: 20px;
 
-            &:nth-child(1n+2) {
-                @include sm {
-                    margin-left: 20px;
-                }
-            }
         }
 
         .project__img {

@@ -20,8 +20,9 @@
         margin-left: auto;
         margin-right: auto;
         padding: 32px;
+        text-decoration: none;
         border: 0.5px solid rgba($color: $gold, $alpha: 0.6);
-        border-radius: 2px;
+        border-radius: 8px;
         margin-bottom: 30px;
         color: rgba($color: $white, $alpha: 0.85);
         font-weight: 400;
@@ -39,29 +40,36 @@
         &:hover,
         &:focus {
             background-color: rgba($color: $gold, $alpha: 1.0);
-            color: $black;
+            color: rgba($color: $black, $alpha: .8);
 
             img {
                 filter: unset !important;
+            }
+            .media__link{
+                color: rgba($color: $black, $alpha: 0.9);;
             }
 
         }
 
         .media__name {
-            font-size: 16px;
+            font-size: 20px;
             font-weight: 600;
             padding-bottom: 20px;
+            font-family: 'Playfair Display';
 
             img {
                 width: 38px;
                 float: right;
-                filter: invert(82%) sepia(22%) saturate(1015%) hue-rotate(335deg) brightness(90%) contrast(102%);
+                opacity: 0.4;
+                // filter: invert(82%) sepia(22%) saturate(1015%) hue-rotate(335deg) brightness(90%) contrast(102%);
             }
 
         }
 
         .media__link {
             font-size: 12px;
+            color: rgba($color: $gold, $alpha: 0.8);
+
         }
     }
 

@@ -1,13 +1,18 @@
 import Flickity from 'flickity';
 
 export function carousel(){
-
+    let adaptatifGroupCells = 2;
+    let adaptatifCellAlign = "left";
+    if(window.innerWidth <= 414){
+        adaptatifGroupCells = 1
+        adaptatifCellAlign = 'center'
+    }
     return new Flickity('.flickity', {
 
       accessibility: true,
-      adaptiveHeight: false,
+      adaptiveHeight: true,
       autoPlay: false,
-      cellAlign: 'left',
+      cellAlign: adaptatifCellAlign,
       cellSelector: undefined, 
       contain: false,
       draggable: '>1',
@@ -15,8 +20,8 @@ export function carousel(){
       freeScroll: false,
       friction: 0.2,
       // smaller number = easier to flick farther
-    
-      groupCells: 1,
+      
+      groupCells: adaptatifGroupCells,
       // group cells together in slides
     
       initialIndex: 0,
@@ -27,7 +32,7 @@ export function carousel(){
       // set img data-flickity-lazyload="src.jpg"
       // set to number to load images adjacent cells
     
-      percentPosition: true,
+      percentPosition: false,
       // sets positioning in percent values, rather than pixels
       // Enable if items have percent widths
       // Disable if items have pixel widths, like images

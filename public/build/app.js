@@ -393,11 +393,17 @@ parcelHelpers.export(exports, "carousel", ()=>carousel
 var _flickity = require("flickity");
 var _flickityDefault = parcelHelpers.interopDefault(_flickity);
 function carousel() {
+    let adaptatifGroupCells = 2;
+    let adaptatifCellAlign = "left";
+    if (window.innerWidth <= 414) {
+        adaptatifGroupCells = 1;
+        adaptatifCellAlign = 'center';
+    }
     return new _flickityDefault.default('.flickity', {
         accessibility: true,
-        adaptiveHeight: false,
+        adaptiveHeight: true,
         autoPlay: false,
-        cellAlign: 'left',
+        cellAlign: adaptatifCellAlign,
         cellSelector: undefined,
         contain: false,
         draggable: '>1',
@@ -405,7 +411,7 @@ function carousel() {
         freeScroll: false,
         friction: 0.2,
         // smaller number = easier to flick farther
-        groupCells: 1,
+        groupCells: adaptatifGroupCells,
         // group cells together in slides
         initialIndex: 0,
         // zero-based index of the initial selected cell
@@ -413,7 +419,7 @@ function carousel() {
         // enable lazy-loading images
         // set img data-flickity-lazyload="src.jpg"
         // set to number to load images adjacent cells
-        percentPosition: true,
+        percentPosition: false,
         // sets positioning in percent values, rather than pixels
         // Enable if items have percent widths
         // Disable if items have pixel widths, like images
