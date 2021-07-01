@@ -2,6 +2,7 @@
     padding-top: 100px;
     padding-bottom: 100px;
     overflow-y: hidden;
+
     &::-webkit-scrollbar {
         display: none;
     }
@@ -95,15 +96,22 @@
         font-weight: 600;
         padding: 8px 30px;
         transition: 0.5s;
+
+        &::after {
+            content: url('../../public/img/github.svg');
+            position: absolute;
+            opacity: 0;
+            margin-left: 10px;
+            transition: .7s;
+        }
+
         &:hover {
             color: $black;
             background-color: $gold;
+            padding: 8px 40px;
 
-            &::after {
-                content: "\279C";
-                font-size: 15px;
-                margin-left: 10px;
-                color: $black;
+            &:after {
+                opacity: 1;
             }
         }
     }

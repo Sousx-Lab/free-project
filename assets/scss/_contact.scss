@@ -26,9 +26,10 @@
         margin-bottom: 30px;
         color: rgba($color: $white, $alpha: 1);
         font-weight: 400;
-        transition: 0.4s;
+
         @include md {
             width: auto;
+
             &:nth-child(1n+2) {
                 @include sm {
                     margin-left: 20px;
@@ -40,12 +41,10 @@
         &:focus {
             background-color: rgba($color: $gold, $alpha: 1.0);
             color: rgba($color: $black, $alpha: .8);
-
-            img {
-                filter: unset !important;
-            }
-            .media__link{
-                color: rgba($color: $black, $alpha: 0.9);;
+            transition: 0.4s !important;
+            .media__link {
+                color: rgba($color: $black, $alpha: 0.9);
+                ;
             }
 
         }
@@ -60,7 +59,6 @@
                 width: 40px;
                 float: right;
                 opacity: 0.6;
-                // filter: invert(82%) sepia(22%) saturate(1015%) hue-rotate(335deg) brightness(90%) contrast(102%);
             }
 
         }

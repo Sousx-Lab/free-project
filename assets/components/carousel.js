@@ -3,6 +3,7 @@ import Flickity from 'flickity';
 export function carousel(){
     let adaptatifGroupCells = 2;
     let adaptatifCellAlign = "left";
+    
     if(window.innerWidth <= 414){
         adaptatifGroupCells = 1
         adaptatifCellAlign = 'center'

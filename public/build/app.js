@@ -382,10 +382,12 @@ function hmrAcceptRun(bundle/*: ParcelRequire */ , id/*: string */ ) {
 
 },{}],"6UHSv":[function(require,module,exports) {
 var _carousel = require("../components/carousel");
+var _transition = require("../components/transition");
 var _appScss = require("../scss/app.scss");
+_transition.loadTransition();
 _carousel.carousel();
 
-},{"../components/carousel":"mE7q5","../scss/app.scss":"4DMVC"}],"mE7q5":[function(require,module,exports) {
+},{"../components/carousel":"mE7q5","../scss/app.scss":"4DMVC","../components/transition":"44uKV"}],"mE7q5":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "carousel", ()=>carousel
@@ -3289,6 +3291,33 @@ exports.export = function(dest, destName, get) {
     });
 };
 
-},{}],"4DMVC":[function() {},{}]},["4DVBA","6UHSv"], "6UHSv", "parcelRequire3748")
+},{}],"4DMVC":[function() {},{}],"44uKV":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "loadTransition", ()=>loadTransition
+);
+function loadTransition() {
+    let observer = new IntersectionObserver(function(observables) {
+        observables.forEach(function(observable) {
+            // L'élément devient visible
+            if (observable.intersectionRatio > 0.5) {
+                observable.target.style.cssText = `transition-delay: 0.${observable.target.dataset.delay}s;`;
+                observable.target.classList.add('in');
+                observer.unobserve(observable.target);
+            }
+        });
+    }, {
+        threshold: [
+            0.5
+        ]
+    });
+    // On observe nos éléments
+    let items = document.querySelectorAll('.fade');
+    items.forEach(function(item) {
+        observer.observe(item);
+    });
+}
+
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"73PPo"}]},["4DVBA","6UHSv"], "6UHSv", "parcelRequire3748")
 
 //# sourceMappingURL=app.js.map
