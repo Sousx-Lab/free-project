@@ -2,7 +2,6 @@
     padding-top: 100px;
     padding-bottom: 100px;
     overflow-y: hidden;
-
     &::-webkit-scrollbar {
         display: none;
     }
@@ -21,6 +20,10 @@
         border-radius: 8px 8px 0 0;
         overflow: hidden;
         cursor: grab;
+
+        @include md {
+            width: 440px;
+        }
 
         &:nth-child(1n+2) {
             margin-left: 20px;
@@ -53,13 +56,16 @@
         }
 
         .top__title {
-            padding-top: 30px;
-            padding-bottom: 30px;
+            font-size: 11px;
         }
 
         .project__description {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
             min-height: 300px;
             padding: 30px;
+            margin-bottom: 30px;
         }
 
         @include md {}
@@ -75,15 +81,10 @@
 }
 
 .porject__link {
-    display: flex;
-    padding: 30px;
+    padding: 20px 0 0;
 
     a {
-        padding: 20px 30px;
-        transition: 0.3s ease-in-out;
-        border: 1.5px;
-        border-style: solid;
-        border-color: $gold;
+        border: 1.5px solid $gold;
         border-radius: 2px;
         font-size: 12px;
         font-weight: 600;
@@ -92,27 +93,29 @@
         color: $white;
         font-family: 'Open Sans';
         font-weight: 600;
-        padding: 13px 15px;
-
+        padding: 8px 30px;
+        transition: 0.5s;
         &:hover {
             color: $black;
             background-color: $gold;
-        }
 
-        &:hover::after {
-            content: "  \279C";
-            color: $black;
+            &::after {
+                content: "\279C";
+                font-size: 15px;
+                margin-left: 10px;
+                color: $black;
+            }
         }
-
     }
+
 }
 
 .flickity-button {
     background-color: rgba($color: $gold, $alpha: 0.85);
     border: none;
-    width: 20px;
+    width: 25px;
     height: 4px;
-    margin: 2px;
+    margin: 5px;
     cursor: pointer;
 
     &:disabled {

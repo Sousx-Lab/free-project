@@ -1,0 +1,16 @@
+footer{
+    display: flex;
+    justify-content: center;
+    background-color: $lightBg;
+    color: rgba($color: $white, $alpha: 0.5);
+    font-size: 13px;
+    padding: 20px 0px; 
+    .credit{
+        padding: 20px;
+        a{
+        text-decoration: none;
+        color: rgba($color: $white, $alpha: 0.5);
+        }
+    }
+   
+}
