@@ -1,27 +1,82 @@
-.contact{
-    // @include lg{
-    //     flex-direction: row;
-    //     justify-content:unset;
-            
-    // }
-    display: flex;
-    flex-direction: column;
-    min-height: calc(100vh - 100px);
-    align-items: flex-start;
-    padding-top: 30px;
-    justify-content: center;
-    .form__contact{
-        border: 0.5px solid rgba($color: $gold, $alpha: 0.5);
-        padding: 2px 300px 100px 0;
-        .input{
-            width: 500px;
-            padding: 3px;
-            margin: 3px;
-            color: $white;
-            background-color: $lightBg;
-            border-radius: 3px;
-            border: none;
-        }
+.contact__page{
+    .contact__card{
+        margin-top: -250px;
+    }
+}
+.page-header{
+    padding-top: 150px;
+    padding-bottom: 120px;
+    position: relative;
+    opacity: 0.1;
+    &:before{
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
     }
     
+}
+.section__contact{
+    padding-top: 150px;
+    padding-bottom: 150px;
+}
+.contact__card{
+    padding: 80px;
+    position: relative;
+    background-color: $lightBg;
+    .contact__detail{
+        color: $white;
+        margin-bottom: 50px;
+    }
+}
+
+.contact__form{
+    display: grid;
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    grid-template-rows: 2fr 1fr;    
+    grid-column-gap: 25px;
+    grid-row-gap: 5px;
+    input, textarea {
+        background-color: $lightBg;
+        border: 0.5px solid rgba($color: $white, $alpha: 0.8);
+        outline: none;
+        padding: 15px 10px;
+        margin-bottom: 30px;
+        font-size: 16px;
+        color: rgba($color: $white, $alpha: 0.8);
+        &:focus{
+            border-color: $gold;
+
+        }
+    }
+    input{
+        width: 300px;
+        padding: 15px 10px;
+        grid-area: 1 / 1 / 2 / 2;
+    }
+    textarea{
+        width: 100%;
+        grid-area: 1 / 2 / 2 / 3;
+    }
+    .btn{
+        padding: 15px 60px;
+        font-size: 14px;
+        font-weight: 600;
+        color: $gold;
+        background-color: $lightBg;
+        outline: none;
+        border: 0.5px solid rgba($color: $gold, $alpha: 0.8);
+        border-radius: 2px;
+        grid-area: 2 / 1 / 3 / 2;
+        text-transform: uppercase;
+        cursor: pointer;
+        &:hover,
+        &:focus{
+            background-color: rgba($color: $gold, $alpha: 1);
+            color: $black;
+        }
+    }
 }

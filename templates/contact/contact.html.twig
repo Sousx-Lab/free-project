@@ -5,16 +5,32 @@
 {% endblock %}
 
 {% block body %}
-
-    <section class="section contact">
-            <div class="sub__title fade" data-delay="2">Me contacter </div>
-            <form class="form__contact" action="" method="post">
-                <div> <input class="input" type="text" name="name" id=""></div>
-                <div><input class="input" type="text" name="object" id=""> </div>
-                <div> <input class="input" type="email" name="email" id=""></div>
-                <div> <textarea class="input" name="" id="" cols="30" rows="10"></textarea></div>
+     
+      <div class="contact__page">
+        <div class="page-header" style="background-image: url(/img/chateau-angers.jpg);"></div>
+         <section class="section section__contact fade">
+            <div class="contact__card">
+            <div class="top__title fade" data-delay="1">Obtenir un devis</div>
+            <div class="sub__title fade" data-delay="2">Me contacter</div>
+            <p class="contact__detail fade" data-delay="3"> Merci de donner un maximum de détail sur le projet afin que je puisse évaluer correctement la charge de travail que représente votre projet. Cela permettra aussi d'avoir un premier chiffrage au plus prêt du devis final.</p>
+                <form class="contact__form fade" data-delay="35" action="" method="post">
+                <div>
+                    <input type="text" name="name" placeholder="Nom & Prénom" aria-label="Nom et Prénom" required>
+                    <input type="email" name="email" placeholder="Email" aria-label="Votre email" required>
+                 </div>
+               
+                <textarea type="email" name="" name="description" placeholder="Description du votre projet" aria-label="Description du projet" required minlength="20" ></textarea>
+                <div>
+                    <button type="submit" class="btn">Envoyer</button>
+                </div>
             </form>
-
-    </section>
+        </div>
+        </section>
+      </div>
+   
+       
+          
+    
+       
 {% endblock %}
 

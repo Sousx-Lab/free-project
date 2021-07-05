@@ -401,7 +401,8 @@ function carousel() {
         adaptatifGroupCells = 1;
         adaptatifCellAlign = 'center';
     }
-    return new _flickityDefault.default('.flickity', {
+    let elem = document.querySelector('.flickity');
+    if (elem) return new _flickityDefault.default(elem, {
         accessibility: true,
         adaptiveHeight: true,
         autoPlay: false,

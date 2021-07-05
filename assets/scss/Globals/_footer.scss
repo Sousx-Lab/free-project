@@ -1,10 +1,11 @@
 footer{
-    display: flex;
-    justify-content: center;
     background-color: $lightBg;
     color: rgba($color: $white, $alpha: 0.5);
     font-size: 13px;
-    padding: 20px 0px; 
+    padding: 20px 0px;
+    position: absolute;
+    width: 100%;
+    bottom: 0;
     .credit{
         padding: 20px;
         text-align: center;
