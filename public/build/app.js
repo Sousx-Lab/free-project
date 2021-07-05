@@ -387,7 +387,7 @@ var _appScss = require("../scss/app.scss");
 _transition.loadTransition();
 _carousel.carousel();
 
-},{"../components/carousel":"mE7q5","../scss/app.scss":"4DMVC","../components/transition":"44uKV"}],"mE7q5":[function(require,module,exports) {
+},{"../components/carousel":"mE7q5","../components/transition":"44uKV","../scss/app.scss":"4DMVC"}],"mE7q5":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "carousel", ()=>carousel
@@ -3291,7 +3291,7 @@ exports.export = function(dest, destName, get) {
     });
 };
 
-},{}],"4DMVC":[function() {},{}],"44uKV":[function(require,module,exports) {
+},{}],"44uKV":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "loadTransition", ()=>loadTransition
@@ -3318,6 +3318,6 @@ function loadTransition() {
     });
 }
 
-},{"@parcel/transformer-js/src/esmodule-helpers.js":"73PPo"}]},["4DVBA","6UHSv"], "6UHSv", "parcelRequire3748")
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"73PPo"}],"4DMVC":[function() {},{}]},["4DVBA","6UHSv"], "6UHSv", "parcelRequire3748")
 
 //# sourceMappingURL=app.js.map

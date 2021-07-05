@@ -1,5 +1,5 @@
 <?php
-namespace App\Controller\PortfolioController;
+namespace App\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
@@ -13,6 +13,6 @@ class HomeController extends AbstractController
      */
     public function home(): Response
     {
-        return $this->render('portfolio/homepage.html.twig', []);
+        return $this->render('home/homepage.html.twig', []);
     }
 }

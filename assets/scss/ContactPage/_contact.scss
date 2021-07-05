@@ -1,0 +1,27 @@
+.contact{
+    // @include lg{
+    //     flex-direction: row;
+    //     justify-content:unset;
+            
+    // }
+    display: flex;
+    flex-direction: column;
+    min-height: calc(100vh - 100px);
+    align-items: flex-start;
+    padding-top: 30px;
+    justify-content: center;
+    .form__contact{
+        border: 0.5px solid rgba($color: $gold, $alpha: 0.5);
+        padding: 2px 300px 100px 0;
+        .input{
+            width: 500px;
+            padding: 3px;
+            margin: 3px;
+            color: $white;
+            background-color: $lightBg;
+            border-radius: 3px;
+            border: none;
+        }
+    }
+    
+}

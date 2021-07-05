@@ -1,13 +1,8 @@
-@import "_variables";
-@import "_breakpoints";
-@import "mixins";
-@import "_globals";
-@import "_spacing";
-@import "_font";
-@import "_grid";
-@import "_nav";
-@import "_main";
-@import "_skills";
-@import "_projects";
-@import "_contact";
-@import "_footer";
+@import "Globals/Globals.scss";
+@import "HomePage/HomePage.scss";
+@import "ContactPage/ContactPage.scss";
+
+// @import "HomePage/main";
+// @import "HomePage/skills";
+// @import "HomePage/projects";
+// @import "HomePage/contact";

@@ -26,17 +26,11 @@
                 <a href="#projects">réalisations</a>
               </li>
                <li id="contact">
-                <a href="#">me contacter</a>
+                <a href="{{path ('contact_route')}}">me contacter</a>
                </li>
             </ul>
             </nav>
-        {% block body %}
-            
-        {% endblock %}
-        {% block javascripts %}
-            <script src="build/app.js" defer></script>
-            {#{{ encore_entry_script_tags('app') }}#}
-        {% endblock %}
+        {% block body %} {% endblock %}
         {% include "footer.html.twig" %}
     </body>
 </html>

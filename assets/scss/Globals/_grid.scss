@@ -47,7 +47,10 @@
   }
 }
 
-.hero, .header, .page-header, .section{
+.hero, 
+.header, 
+.page-header, 
+.section {
     @include xl{
         padding-left: calc(50vw - 570px);
         padding-right: calc(50vw - 570px);
