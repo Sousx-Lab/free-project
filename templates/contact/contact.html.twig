@@ -1,36 +1,79 @@
 {% extends "base.html.twig" %}
 
-{% block title %} 
-    Nassim Hattab | Contact
+{% block title %}
+	Nassim Hattab | Contact
 {% endblock %}
 
 {% block body %}
-     
-      <div class="contact__page">
-        <div class="page-header" style="background-image: url(/img/chateau-angers.jpg);"></div>
-         <section class="section section__contact fade">
-            <div class="contact__card">
-            <div class="top__title fade" data-delay="1">Obtenir un devis</div>
-            <div class="sub__title fade" data-delay="2">Me contacter</div>
-            <p class="contact__detail fade" data-delay="3"> Merci de donner un maximum de détail sur le projet afin que je puisse évaluer correctement la charge de travail que représente votre projet. Cela permettra aussi d'avoir un premier chiffrage au plus prêt du devis final.</p>
-                <form class="contact__form fade" data-delay="35" action="" method="post">
-                <div>
-                    <input type="text" name="name" placeholder="Nom & Prénom" aria-label="Nom et Prénom" required>
-                    <input type="email" name="email" placeholder="Email" aria-label="Votre email" required>
-                 </div>
-               
-                <textarea type="email" name="" name="description" placeholder="Description du votre projet" aria-label="Description du projet" required minlength="20" ></textarea>
-                <div>
-                    <button type="submit" class="btn">Envoyer</button>
-                </div>
-            </form>
-        </div>
-        </section>
-      </div>
-   
-       
-          
-    
-       
-{% endblock %}
 
+	<div class="contact__page">
+		<div class="page-header" style="background-image: url(/img/chateau-angers.jpg);"></div>
+		<section class="section section__contact fade">
+			<div class="contact__card">
+				<div class="top__title fade" data-delay="1">Travaillons ensemble</div>
+				<div class="sub__title fade" data-delay="2">Me contacter</div>
+				<p class="contact__detail fade" data-delay="3">Si vous me contactez pour une mission en freelance merci de donner un maximum de détails sur le projet afin que je puisse évaluer correctement la charge de travail que représente votre projet. Cela permettra aussi d'avoir un premier chiffrage au plus près du devis final.</p>
+				
+				{% if form_errors(form) %}	
+					<div class="invalid-feedback">{{form_errors(form)}}</div>
+				{% endif %}
+				<form class="contact__form fade" data-delay="35" data-turbo="true" action="{{path ('contact_route')}}" method="post">
+					<div>
+						{{ form_widget (form.name, {
+                        'attr': {
+							'class': (form_errors(form.name) ? "invalid-feedback" : ' '),
+                            'placeholder': "Nom & Prénom",
+                            'aria-label': "Nom et Prénom",
+                            'autofocus': 'true',
+                            'style': (form.name.vars.valid ? ' ' :  "margin-bottom: 15px!important;")
+                            }
+                        }) 
+                    }}
+						{% if form_errors(form.name) %}
+							{% for error in form.name.vars.errors %}
+								<div class="invalid-feedback">{{error.message}}</div>
+							{% endfor %}
+						{% endif %}
+
+						{{form_widget(form.email, {
+                        'attr':{
+							'class': (form_errors(form.email) ? "invalid-feedback" : ' '),
+                            'placeholder': "Email",
+                            'aria-label': "Votre email",
+                            'style': (form.email.vars.valid ? ' ' :  "margin-bottom: 15px!important;")
+                            }  
+                        })
+                    }}
+						{% if form_errors(form.email) %}
+							{% for error in form.email.vars.errors %}
+								<div class="invalid-feedback">{{error.message}}</div>
+							{% endfor %}
+						{% endif %}
+					</div>
+
+					<div>
+						{{ form_widget(form.description, {
+                        'attr:':{
+                            'class': (form_errors(form.description) ? "invalid-feedback" : ' '),
+							'required': "required",
+                            }
+                        })
+                    
+                    }}
+						{% if form_errors(form.description) %}
+							{% for error in form.description.vars.errors %}
+								<div class="invalid-feedback">{{error.message}}</div>
+							{% endfor %}
+						{% endif %}
+					</div>
+
+					{{ form_widget (form._token) }}
+					<div>
+						<button type="submit" class="btn">Envoyer</button>
+					</div>
+				</form>
+			</div>
+		</section>
+	</div>
+
+{% endblock %}

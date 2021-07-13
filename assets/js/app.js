@@ -1,6 +1,15 @@
-import {carousel} from '../components/carousel';
-import { loadTransition } from '../components/transition';
 import '../scss/app.scss';
+import  loadTransition  from '../services/transition';
+import * as Turbo from "@hotwired/turbo";
+import carousel from '../services/carousel';
+import notify from '../services/notify';
 
-loadTransition();
-carousel();
+Turbo.start();
+
+['turbo:load', 'turbo:render'].forEach(e => {
+    document.addEventListener(e, function(){
+        loadTransition();
+        carousel();
+        notify();
+    })
+})

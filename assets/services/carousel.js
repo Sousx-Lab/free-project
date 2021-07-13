@@ -1,10 +1,10 @@
 import Flickity from 'flickity';
 
-export function carousel(){
+export default function carousel(){
     let adaptatifGroupCells = 2;
     let adaptatifCellAlign = "left";
     
-    if(window.innerWidth <= 414){
+    if(window.innerWidth <= 412){
         adaptatifGroupCells = 1
         adaptatifCellAlign = 'center'
     }
@@ -64,7 +64,7 @@ export function carousel(){
         // at end of cells, wraps-around to first for infinite scrolling
       
       });
-      return null;
+      
     }
-    
+    return null;
 } 

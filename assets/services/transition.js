@@ -1,5 +1,5 @@
 
-export function loadTransition()
+export default function loadTransition()
 {
     let observer = new IntersectionObserver(function (observables) {
         observables.forEach(function (observable) {
