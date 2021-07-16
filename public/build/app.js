@@ -383,12 +383,12 @@ function hmrAcceptRun(bundle/*: ParcelRequire */ , id/*: string */ ) {
 },{}],"6UHSv":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 var _appScss = require("../scss/app.scss");
-var _transition = require("../services/transition");
+var _transition = require("./services/transition");
 var _transitionDefault = parcelHelpers.interopDefault(_transition);
 var _turbo = require("@hotwired/turbo");
-var _carousel = require("../services/carousel");
+var _carousel = require("./services/carousel");
 var _carouselDefault = parcelHelpers.interopDefault(_carousel);
-var _notify = require("../services/notify");
+var _notify = require("./services/notify");
 var _notifyDefault = parcelHelpers.interopDefault(_notify);
 _turbo.start();
 [
@@ -396,13 +396,13 @@ _turbo.start();
     'turbo:render'
 ].forEach((e)=>{
     document.addEventListener(e, function() {
-        _transitionDefault.default();
         _carouselDefault.default();
+        _transitionDefault.default();
         _notifyDefault.default();
     });
 });
 
-},{"../scss/app.scss":"4DMVC","@hotwired/turbo":"3VJOf","@parcel/transformer-js/src/esmodule-helpers.js":"73PPo","../services/transition":"FpJX3","../services/carousel":"2H2ns","../services/notify":"2j3p3"}],"4DMVC":[function() {},{}],"3VJOf":[function(require,module,exports) {
+},{"../scss/app.scss":"4DMVC","@hotwired/turbo":"3VJOf","@parcel/transformer-js/src/esmodule-helpers.js":"73PPo","./services/transition":"4Ytu5","./services/carousel":"3PZrT","./services/notify":"H7BI2"}],"4DMVC":[function() {},{}],"3VJOf":[function(require,module,exports) {
 (function(global, factory) {
     typeof exports === 'object' && typeof module !== 'undefined' ? factory(exports) : typeof define === 'function' && define.amd ? define([
         'exports'
@@ -4748,7 +4748,7 @@ exports.export = function(dest, destName, get) {
     });
 };
 
-},{}],"FpJX3":[function(require,module,exports) {
+},{}],"4Ytu5":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 function loadTransition() {
@@ -4774,7 +4774,7 @@ function loadTransition() {
 }
 exports.default = loadTransition;
 
-},{"@parcel/transformer-js/src/esmodule-helpers.js":"73PPo"}],"2H2ns":[function(require,module,exports) {
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"73PPo"}],"3PZrT":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 var _flickity = require("flickity");
@@ -4782,7 +4782,7 @@ var _flickityDefault = parcelHelpers.interopDefault(_flickity);
 function carousel() {
     let adaptatifGroupCells = 2;
     let adaptatifCellAlign = "left";
-    if (window.innerWidth <= 412) {
+    if (window.innerWidth <= 768) {
         adaptatifGroupCells = 1;
         adaptatifCellAlign = 'center';
     }
@@ -4822,7 +4822,7 @@ function carousel() {
         setGallerySize: true,
         // sets the height of gallery
         // disable if gallery already has height set with CSS
-        watchCSS: false,
+        watchCSS: true,
         // watches the content of :after of the element
         // activates if #element:after { content: 'flickity' }
         wrapAround: false
@@ -7647,7 +7647,7 @@ exports.default = carousel;
     return Flickity;
 });
 
-},{"./flickity":"3JGpB","fizzy-ui-utils":"uuU9V"}],"2j3p3":[function(require,module,exports) {
+},{"./flickity":"3JGpB","fizzy-ui-utils":"uuU9V"}],"H7BI2":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 var _toastr = require("toastr");

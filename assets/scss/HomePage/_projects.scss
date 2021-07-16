@@ -3,78 +3,97 @@
     padding-bottom: 100px;
     overflow-y: hidden;
     background-image: $bgImage;
+
     &::-webkit-scrollbar {
         display: none;
     }
+
 }
 
 .flickity {
+    &::after {
+        content: '';
+    }
 
-    .project {
-        display: flex;
-        width: 411px;
-        flex-direction: column;
-        color: rgba($color: $white, $alpha: 0.85);
-        font-weight: 400;
-        background-color: $lightBg;
-        border-bottom: 2px solid rgba($color: $gold, $alpha: .5);
-        border-radius: 8px 8px 0 0;
-        overflow: hidden;
-        cursor: grab;
-
-        @include md {
-            width: 440px;
+    @include md {
+        &::after {
+            content: 'flickity';
+            display: none;
         }
+
+    }
+}
+
+.project {
+    display: flex;
+    width: calc(100vw - 50px);
+    max-width: 490px;
+    padding: 0 auto;
+    flex-direction: column;
+    color: rgba($color: $white, $alpha: 0.85);
+    font-weight: 400;
+    background-color: $lightBg;
+    border-bottom: 2px solid rgba($color: $gold, $alpha: .5);
+    border-radius: 8px 8px 0 0;
+    overflow: hidden;
+    cursor: grab;
+    margin: 0 auto 25px;
+
+    @include md {
+        max-width: 470px;
 
         &:nth-child(1n+2) {
-            margin-left: 20px;
-
+            margin-left: 25px;
         }
+    }
 
-        .project__img {
+    .project__img {
+        border-radius: 8px;
+        overflow: hidden;
+
+        img {
+            width: 100%;
+            height: auto;
             border-radius: 8px;
-            overflow: hidden;
-
-            img {
-                width: 100%;
-                height: auto;
-                border-radius: 8px;
-                -webkit-transform: scale(1);
-                transform: scale(1);
-                -webkit-transition: .5s ease-in-out;
-                transition: .5s ease-in-out;
-            }
-
+            -webkit-transform: scale(1);
+            transform: scale(1);
+            -webkit-transition: .5s ease-in-out;
+            transition: .5s ease-in-out;
         }
 
-        &:hover {
-            border-bottom: 4px solid rgba($color: $gold, $alpha: 0.7);
+    }
 
-            img {
-                -webkit-transform: scale(1.1);
-                transform: scale(1.1);
-            }
+    &:hover {
+        border-bottom: 4px solid rgba($color: $gold, $alpha: 0.7);
+
+        img {
+            -webkit-transform: scale(1.1);
+            transform: scale(1.1);
+        }
+    }
+
+    .project__description {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        min-height: 300px;
+        padding: 30px;
+        margin-bottom: 30px;
+
+        .sub__title {
+            font-size: 20px !important;
         }
 
         .top__title {
-            font-size: 11px;
+            font-size: 11px !important;
         }
-
-        .project__description {
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            min-height: 300px;
-            padding: 30px;
-            margin-bottom: 30px;
-        }
-
-        @include md {}
     }
 
-    .flickity-viewport {
-        margin-bottom: 20px;
-    }
+    @include md {}
+}
+
+.flickity-viewport {
+    margin-bottom: 20px;
 }
 
 .flickity-enabled:focus {
