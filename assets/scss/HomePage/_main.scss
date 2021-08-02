@@ -64,11 +64,9 @@
     }
     img{
         @include lg{
-            width: 600px;
-            border-radius: 50%;
+            width: 550px;
+            border-radius: 2px;
             height: auto;
-            -webkit-filter: grayscale(100%); /* Safari 6.0 - 9.0 */
-            filter: grayscale(100%);
         }
     }
     
