@@ -18,5 +18,9 @@
 /phpunit.xml
 .phpunit.result.cache
 ###< phpunit/phpunit ###
+
+###> Javasciprt ###
 node_modules
 /.parcel-cache
+/public/build/
+###< Javasciprt ###
