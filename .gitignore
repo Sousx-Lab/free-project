@@ -22,5 +22,5 @@
 ###> Javasciprt ###
 node_modules
 /.parcel-cache
-/public/build/*/
+/public/build/*
 ###< Javasciprt ###
