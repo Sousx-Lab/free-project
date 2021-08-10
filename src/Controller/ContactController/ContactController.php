@@ -23,9 +23,9 @@ class ContactController extends AbstractController
         $contact = new ContactData();
         $form = $this->createForm(ContactType::class, $contact);
         $form->handleRequest($request);
+        
         if ($form->isSubmitted() && $form->isValid()) {
-
-            // dd($request->getPreferredFormat(), $request->headers->get('Turbo-Frame'));
+            
             try {
                 $contactMailer->sendEmail($contact);
                 $this->addFlash('success', "Merci. Votre message a bien été envoyé !");
