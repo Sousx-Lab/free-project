@@ -1,72 +1,85 @@
-.hero{
-    @include lg{
+.hero {
+    @include lg {
         flex-direction: row;
-        justify-content:unset;
-        
+        justify-content: unset;
+
     }
+
     display: flex;
     min-height: 100vh;
-    align-items: center;
+    // align-items: center;
     flex-direction: column;
     padding-top: 30px;
     justify-content: center;
     background-image: $bgImage;
 }
 
-.hero__hello{
-    font-size: 24px;
-    font-weight: 400;
-    text-align: center;
-    color: rgba($color: $gold, $alpha: 0.9);
-    @include lg{
-        font-size: 36px;
-        font-weight: 500;
-        color: rgba($color: $gold, $alpha: 0.9);
-        text-align: start;
-    }
-    
-}
+.hero__body {
+    align-self: center;
 
-.hero__name{
-    @include lg{
-        font-size: 100px;
-        color: $white;
-        max-width: 640px;
-        line-height: 0.9em;
-        text-align: start;
-    }
-    color: $white;
-    font-family: 'Playfair Display', serif;
-    font-weight: 600;
-    text-align: center;
-    font-size: 60px;
-    margin: 8px 0 16px 0;
-    line-height: 0.9em;
-    
-}
 
-.hero__job{
-    color: $white;
-    @include lg{
-        font-size: 32px;
+    .hero__hello {
+        font-size: 24px;
         font-weight: 400;
-        text-align: start;
+        text-align: center;
+        color: rgba($color: $gold, $alpha: 0.9);
+
+        @include lg {
+            font-size: 36px;
+            font-weight: 500;
+            color: rgba($color: $gold, $alpha: 0.9);
+            text-align: start;
+        }
+
     }
-    text-align: center;
-    font-size: 18px;
-    
+
+    .hero__name {
+        @include lg {
+            font-size: 100px;
+            color: $white;
+            max-width: 640px;
+            line-height: 0.9em;
+            text-align: start;
+        }
+
+        color: $white;
+        font-family: 'Playfair Display',
+        serif;
+        font-weight: 600;
+        text-align: center;
+        font-size: 60px;
+        margin: 8px 0 16px 0;
+        line-height: 0.9em;
+
+    }
+
+    .hero__job {
+        color: $white;
+
+        @include lg {
+            font-size: 32px;
+            font-weight: 400;
+            text-align: start;
+        }
+
+        text-align: center;
+        font-size: 18px;
+
+    }
 }
 
-.hero__img{
+.hero__img {
     display: none;
-    @include lg{
+
+    @include lg {
         display: initial;
     }
-    img{
-        @include lg{
+
+    img {
+        @include lg {
             width: 525px;
-            height: auto;
+            height: 100%;
         }
     }
-    
+
 }

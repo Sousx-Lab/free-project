@@ -10,20 +10,6 @@
 
 }
 
-.flickity {
-    &::after {
-        content: '';
-    }
-
-    @include md {
-        &::after {
-            content: 'flickity';
-            display: none;
-        }
-
-    }
-}
-
 .project {
     display: flex;
     width: calc(100vw - 50px);
@@ -92,14 +78,6 @@
     @include md {}
 }
 
-.flickity-viewport {
-    margin-bottom: 20px;
-}
-
-.flickity-enabled:focus {
-    outline: none
-}
-
 .porject__link {
     padding: 20px 0 0;
 
@@ -135,6 +113,28 @@
         }
     }
 
+}
+
+/** Flickity section */
+.flickity {
+    &::after {
+        content: '';
+    }
+
+    @include md {
+        &::after {
+            content: 'flickity';
+            display: none;
+        }
+    }
+}
+
+.flickity-viewport {
+    margin-bottom: 20px;
+}
+
+.flickity-enabled:focus {
+    outline: none
 }
 
 .flickity-button {
