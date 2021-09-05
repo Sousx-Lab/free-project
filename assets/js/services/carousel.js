@@ -1,30 +1,21 @@
 import Flickity from 'flickity';
 
 export default function carousel() {
-  let adaptatifGroupCells = 2;
-  let adaptatifCellAlign = "left";
 
-  if (window.innerWidth <= 768) {
-    adaptatifGroupCells = 1
-    adaptatifCellAlign = 'center'
-  }
-  let elem = document.querySelector('.flickity')
-  if (elem) {
-    return new Flickity(elem, {
-
+  const option = {
       accessibility: true,
       adaptiveHeight: true,
       autoPlay: false,
-      cellAlign: adaptatifCellAlign,
+      cellAlign: 'left',
       cellSelector: undefined,
       contain: false,
-      draggable: '>1',
+      draggable: false,
       dragThreshold: 1,
       freeScroll: false,
       friction: 0.2,
       // smaller number = easier to flick farther
 
-      groupCells: adaptatifGroupCells,
+      groupCells: 1,
       // group cells together in slides
 
       initialIndex: 0,
@@ -61,10 +52,14 @@ export default function carousel() {
       // activates if #element:after { content: 'flickity' }
 
       wrapAround: false
-      // at end of cells, wraps-around to first for infinite scrolling
-
-    });
-
+  }
+  if (matchMedia('screen and (min-width: 768px)').matches) {
+    option.cellAlign = 'left'
+    option.draggable = true
+  }
+  let elem = document.querySelector('.flickity')
+  if (elem) {
+    return new Flickity(elem, option);
   }
   return null;
 }

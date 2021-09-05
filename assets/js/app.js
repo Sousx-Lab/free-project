@@ -9,7 +9,7 @@ Turbo.start();
 ['turbo:load', 'turbo:render'].forEach(e => {
     document.addEventListener(e, function(){
         carousel();
-        loadTransition();
         notify();
+        loadTransition();
     })
 })
