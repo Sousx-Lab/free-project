@@ -23,6 +23,13 @@ class ContactType extends AbstractType
                     'aria-label' => "Description du projet",
                     'minlength' => "20"
                 ]
+            ])
+            ->add('confirm', TextType::class,[
+                'mapped' => false,
+                'required'=>  false,
+                'attr' => [
+                    'class'=>  'confirm__input',
+                ]
             ]);
     }
 

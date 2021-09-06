@@ -52,7 +52,9 @@
         grid-template-rows: 2fr 1fr;
 
     }
-
+    .confirm__input{
+        display: none;
+    }
     grid-column-gap: 20px;
     grid-row-gap: 30px;
 
@@ -70,6 +72,7 @@
             border-color: $gold;
 
         }
+        
     }
 
     input {

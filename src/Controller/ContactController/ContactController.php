@@ -24,8 +24,7 @@ class ContactController extends AbstractController
         $form = $this->createForm(ContactType::class, $contact);
         $form->handleRequest($request);
         
-        if ($form->isSubmitted() && $form->isValid()) {
-            
+        if ($form->isSubmitted() && $form->isValid() && null === $form->get('confirm')->getData()) {
             try {
                 $contactMailer->sendEmail($contact);
                 $this->addFlash('success', "Merci. Votre message a bien été envoyé !");
@@ -41,7 +40,7 @@ class ContactController extends AbstractController
                 );
             }
         }
-        if ($form->isSubmitted() && !$form->isValid()) {
+        if ($form->isSubmitted() && !$form->isValid() || null !== $form->get('confirm')->getData()) {
             return new Response(
                 $this->renderView('contact/contact.html.twig', [
                     'form' =>  $form->createView()
