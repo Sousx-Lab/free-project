@@ -1,9 +1,9 @@
 framework:
     mailer:
         envelope:
-            sender: 'nssmhttb@gmail.com'
-            recipients: ['nssmhttb@gmail.com']
+            sender: 'postmaster@nssmhttb.ovh'
+            recipients: ['postmaster@nssmhttb.ovh']
         headers:
-            from: 'Nassim <nssmhttb@gmail.com>'
-            to: 'nssmhttb@gmail.com'
+            from: 'Nassim <postmaster@nssmhttb.ovh>'
+            to: 'postmaster@nssmhttb.ovh'
         dsn: '%env(MAILER_DSN)%'
