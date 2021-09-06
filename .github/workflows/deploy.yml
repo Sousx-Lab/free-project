@@ -10,9 +10,9 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v1
+      - uses: actions/checkout@v2
 
-    - name: Copy repository contents via scp
+      - name: Copy repository contents via scp
       uses: appleboy/scp-action@master
       env:
         HOST: ${{ secrets.HOST }}
@@ -23,11 +23,11 @@ jobs:
         source: "."
         target: "/var/www/portfolio"
 
-    - name: Executing remote command
+      - name: Executing remote command
       uses: appleboy/ssh-action@master
       with:
         host: ${{ secrets.HOST }}
         USERNAME: ${{ secrets.USERNAME }}
         PORT: ${{ secrets.PORT }}
         KEY: ${{ secrets.SSHKEY }}
-        script: echo ${{ env.APP_ENV }}
+        run: echo ${{ env.APP_ENV }}
