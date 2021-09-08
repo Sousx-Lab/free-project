@@ -31,8 +31,8 @@ jobs:
         script: |
           cd /var/www/portfolio
 
-          composer install --no-dev --optimize-autoloader
-          
+          SYMFONY_ENV=prod composer install --no-dev --optimize-autoloader
+
           rm -rf .env 2> /dev/null
           rm -rf .env.local.php 2> /dev/null
           echo "${{ secrets.APP_ENV }}" >> .env
