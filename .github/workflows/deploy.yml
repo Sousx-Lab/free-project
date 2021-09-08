@@ -25,11 +25,16 @@ jobs:
 
     - name: Executing remote command
       uses: appleboy/ssh-action@master
+      env:
+        APP_ENV: ${{ env.APP_ENV }}
+        MAILER_DSN: ${{ env.MAILER_DSN }}
       with:
         host: ${{ secrets.HOST }}
         USERNAME: ${{ secrets.USERNAME }}
         PORT: ${{ secrets.PORT }}
         KEY: ${{ secrets.SSHKEY }}
+        envs: APP_ENV,MAILER_DSN
         script: |
-          whoami
-          ls -al
+          cd /var/www/portfolio
+          echo 'I am $APP_ENV'
+          echo 'I am $MAILER_DSN'
