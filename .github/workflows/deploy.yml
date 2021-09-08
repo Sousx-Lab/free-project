@@ -6,9 +6,7 @@ on:
       - main
 jobs:
   build:
-
     runs-on: ubuntu-latest
-
     steps:
     - uses: actions/checkout@v2
 
@@ -25,11 +23,6 @@ jobs:
 
     - name: Executing remote command
       uses: appleboy/ssh-action@master
-      # env:
-      #   APP_ENV: ${{ secrets.APP_ENV }}
-      #   MAILER_DSN: ${{ secrets.MAILER_DSN }}
-      #   DATABASE_URL: ${{ secrets.DATABASE_URL }}
-      #   APP_SECRET: 
       with:
         host: ${{ secrets.HOST }}
         USERNAME: ${{ secrets.USERNAME }}
@@ -37,12 +30,18 @@ jobs:
         KEY: ${{ secrets.SSHKEY }}
         script: |
           cd /var/www/portfolio
-          rm -rf .env
+
+          composer install --no-dev --optimize-autoloader
+          
+          rm -rf .env 2> /dev/null
+          rm -rf .env.local.php 2> /dev/null
           echo "${{ secrets.APP_ENV }}" >> .env
           echo "${{ secrets.APP_SECRET }}" >> .env
           echo "${{ secrets.DATABASE_URL }}" >> .env
           echo "${{ secrets.MAILER_DSN }}" >> .env
-          composer install --no-dev
-          composer update --lock
+          composer dump-env prod
+          
+          php bin/console doctrine:database:create
+
           yarn install
           yarn build
