@@ -26,8 +26,8 @@ jobs:
     - name: Executing remote command
       uses: appleboy/ssh-action@master
       env:
-        APP_ENV: ${{ env.APP_ENV }}
-        MAILER_DSN: ${{ env.MAILER_DSN }}
+        APP_ENV: ${{ secrets.APP_ENV }}
+        MAILER_DSN: ${{ secrets.MAILER_DSN }}
       with:
         host: ${{ secrets.HOST }}
         USERNAME: ${{ secrets.USERNAME }}
@@ -36,5 +36,8 @@ jobs:
         envs: APP_ENV,MAILER_DSN
         script: |
           cd /var/www/portfolio
-          echo 'I am $APP_ENV'
-          echo 'I am $MAILER_DSN'
+          echo ${{ secrets.APP_ENV }}
+          echo "${{ secrets.APP_ENV }}"
+          echo  "I am $APP_ENV"
+          echo $APP_ENV
+          ls
