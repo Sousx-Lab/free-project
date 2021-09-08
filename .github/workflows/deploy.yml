@@ -37,6 +37,7 @@ jobs:
         KEY: ${{ secrets.SSHKEY }}
         script: |
           cd /var/www/portfolio
+          rm -rf .env
           echo "${{ secrets.APP_ENV }}" >> .env
           echo "${{ secrets.APP_SECRET }}" >> .env
           echo "${{ secrets.DATABASE_URL }}" >> .env
