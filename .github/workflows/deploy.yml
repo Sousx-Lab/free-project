@@ -30,5 +30,6 @@ jobs:
         USERNAME: ${{ secrets.USERNAME }}
         PORT: ${{ secrets.PORT }}
         KEY: ${{ secrets.SSHKEY }}
-        run: |
-          composer install
+        script: |
+          whoami
+          ls -al
