@@ -30,7 +30,8 @@ jobs:
         KEY: ${{ secrets.SSHKEY }}
         script: |
           cd /var/www/portfolio
-
+          composer require symfony/requirements-checker
+          composer dump-env prod
           SYMFONY_ENV=prod composer install --no-dev --optimize-autoloader
 
           rm -rf .env 2> /dev/null
