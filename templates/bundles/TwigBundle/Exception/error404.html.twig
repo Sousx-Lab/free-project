@@ -1,0 +1,20 @@
+{% extends 'base.html.twig' %}
+{% block menu %}{% endblock %}
+{% block body %}
+<style>
+  body{
+    padding-bottom: 0px!important;
+  }
+</style>
+<div style="height: 100%; min-height:100%;">
+   <div class="hero">
+      {% include "/bundles/TwigBundle/Exception/error.image.html.twig" %}
+      
+      <div class="hero__body">
+       {% include "/bundles/TwigBundle/Exception/error.message.html.twig" %}
+      </div>
+  </div>
+ </div>
+     
+  {% block footer %}{% endblock %}
+{% endblock %}

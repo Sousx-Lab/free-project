@@ -9,7 +9,6 @@
     padding: 0;
     -moz-box-sizing: border-box;
     box-sizing: border-box;
-    font-family: 'Open Sans', sans-serif;
 }
 
 html {
@@ -24,6 +23,8 @@ html {
         padding-bottom: 98px;
         font-size: 15px;
         background-color: $mainBg;
+        color: rgba($color: $white, $alpha: 0.85);
+        font-family: 'Open Sans', sans-serif;
     }
 }
 

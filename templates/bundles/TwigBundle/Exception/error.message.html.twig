@@ -1,0 +1,9 @@
+
+<h1 class="top__title fade" data-delay="1">{{status_code ~ ': ' ~ status_text  }}</h1>
+	<h3 class="sub__title fade" data-delay="2">UH OH! You're lost.</h3>
+	<p class="fade" data-delay="25" style="padding-bottom: 1em;">
+		The page you are looking for does not exist, or an error is thrown. <br>				
+			How you got here is a mystery. But you can click the link below
+			to go back to the homepage.
+	</p>
+	<a class="media__link fade" data-delay="4" href="{{ path ('homepage_route') }}" type="button" class="btn btn-primary">HOME</a>
