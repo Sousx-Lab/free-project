@@ -67,6 +67,7 @@ html {
     border-radius: 3px;
     border: 0.5px solid rgba($color: $white, $alpha: 0.1);
 }
+
 .turbo-progress-bar {
     height: 3px;
     background-color: rgba($color: $gold, $alpha: 0.9)
@@ -91,6 +92,6 @@ div.invalid-feedback {
 
 input.invalid-feedback,
 textarea.invalid-feedback {
-        border: 0.5px solid rgba($color: $danger, $alpha: 0.8)!important;
-        outline: none;
+    border: 0.5px solid rgba($color: $danger, $alpha: 0.8) !important;
+    outline: none;
 }
