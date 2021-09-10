@@ -6,6 +6,7 @@ use App\Form\ContactType;
 use App\Entity\Contact\ContactData;
 use Symfony\Component\Form\FormError;
 use App\Services\Contact\ContactMailer;
+use App\Services\Contact\Exception\ContactMailerException;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
@@ -23,15 +24,15 @@ class ContactController extends AbstractController
         $contact = new ContactData();
         $form = $this->createForm(ContactType::class, $contact);
         $form->handleRequest($request);
-        
+
         if ($form->isSubmitted() && $form->isValid() && null === $form->get('confirm')->getData()) {
             try {
                 $contactMailer->sendEmail($contact);
                 $this->addFlash('success', "Merci. Votre message a bien été envoyé !");
                 return $this->redirectToRoute('homepage_route', [], Response::HTTP_SEE_OTHER);
-            } catch (\Symfony\Component\Mailer\Exception\TransportException $e) {
+            } catch (ContactMailerException $e) {
 
-                $form->addError(new FormError("Une erreur s'est produite lors de l'envoi, réessayez plus tard !"));
+                $form->addError(new FormError($e->getMessageKey()));
                 return new Response(
                     $this->renderView('contact/contact.html.twig', [
                         'form' =>  $form->createView()

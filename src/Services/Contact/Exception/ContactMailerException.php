@@ -8,7 +8,7 @@ class ContactMailerException extends TransportException{
 
     public function getMessageKey()
     {
-        return 'Message non envoyé !';
+        return "Une erreur est survenue lors de l'envoi du message, veuillez réessayer plus tard !";
     }
     
 }
