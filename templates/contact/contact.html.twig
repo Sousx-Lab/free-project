@@ -17,7 +17,7 @@
 				{% if form_errors(form) %}	
 					<div class="invalid-feedback">{{form_errors(form)}}</div>
 				{% endif %}
-				<form class="contact__form fade" data-delay="35" data-turbo="true" action="{{path ('contact_route')}}" method="post">
+				<form id="contact_form" class="contact__form fade" data-delay="35" data-turbo="true" action="{{path ('contact_route')}}" method="post">
 					<div>
 						{{ form_widget (form.name, {
                         'attr': {
@@ -71,7 +71,7 @@
 			
 					{{ form_widget (form._token) }}
 					<div>
-						<button type="submit" class="btn">Envoyer</button>
+						<button type="submit" class="btn__submit">Envoyer</button>
 					</div>
 				</form>
 			</div>
