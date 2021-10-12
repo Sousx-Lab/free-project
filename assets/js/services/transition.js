@@ -1,6 +1,7 @@
 
 export default function loadTransition()
 {
+    let root = matchMedia('screen and (min-width: 768px)').matches ? null : document.body;
     let observer = new IntersectionObserver(function (observables) {
         observables.forEach(function (observable) {
            
@@ -13,7 +14,7 @@ export default function loadTransition()
          
         })
       }, {
-        root: null,
+        root: root,
         rootMargin:'0px',
         threshold: 0.5
       });
