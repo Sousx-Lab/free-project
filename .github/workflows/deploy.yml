@@ -47,3 +47,4 @@ jobs:
 
           yarn install
           yarn build
+          sudo service php7.4-fpm reload
