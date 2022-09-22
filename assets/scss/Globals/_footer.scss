@@ -9,9 +9,10 @@ footer{
     .credit{
         padding: 20px;
         text-align: center;
+        color: rgba($color: $white, $alpha: 0.7);
         a{
         text-decoration: none;
-        color: rgba($color: $white, $alpha: 0.5);
+        color: inherit;
         }
     }
    
